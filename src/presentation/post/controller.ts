@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { PostService } from "../services/post.service";
+import { PostService } from "./services/post.service";
 import { error } from "console";
 
 export class PostController {
@@ -11,13 +11,12 @@ export class PostController {
  //************CREAMOS LOS METODOS no son estaticos los instanciamos en erchivo de los postroutes ***************************************************************** */   
         createPost = async (req: Request, res: Response) => {  // creamos metodo de CREARPOST
 
-            this.postService
-            .createPost() // traemos lo de los postService y como devuelve promesa utilizamos .then
-            .then((data) => {
+            this.postService.createPost(req.body) // traemos lo de los postService y como devuelve promesa utilizamos .then// y de postService traemos el metodo req.body resibiendo lo creado en el postman titulo y descipcion
+            .then((data: any) => {
                 return res.status(201).json(data);
             })
 
-            .catch((error)=> {
+            .catch((error: any)=> {
                 return res.status(500).json({
                     message: 'Error Post createPost',
                     error,

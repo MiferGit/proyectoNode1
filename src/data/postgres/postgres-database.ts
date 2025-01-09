@@ -1,4 +1,7 @@
 import { DataSource } from "typeorm";
+import { User } from "./models/user.model";
+import { Post } from "./models/post.model";
+import { Comment } from "./models/comment.model";
 
 interface Options {
     host: string;   // host entenderlo como la direccion IP o el dominio de donde esta la base de datos
@@ -20,8 +23,8 @@ export class PostgresDatabase {
             username: options.username,
             password: options.password,
             database: options.database,
-            entities: [],  // entidades que van a ser mapeadas
-            synchronize: true,  // sincroniza las entidades con la base de datos
+            entities: [User, Post, Comment],  // entidades que van a ser mapeadas OSEA ARCHIVOS MODELO importamos el Modelo
+            synchronize: true,  // sincroniza las entidades modelos con la base de datos
             ssl: {
                 rejectUnauthorized: false,
             }  // conexion segura

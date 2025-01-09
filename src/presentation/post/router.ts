@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { PostController } from "./controller";
-import { PostService } from "../services/post.service";
+import { PostService } from "./services/post.service";
 
 
 export class PostRoutes {

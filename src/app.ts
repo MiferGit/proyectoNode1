@@ -1,3 +1,4 @@
+import "reflect-metadata"; //importamos reflect-metadata para que funcione typeorm
 import { envs } from "./config";
 import { PostgresDatabase } from "./data";
 import { AppRoutes } from "./presentation/routes"; //impot el archivo routes
