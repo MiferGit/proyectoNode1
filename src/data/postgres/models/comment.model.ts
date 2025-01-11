@@ -29,6 +29,12 @@ export class Comment extends BaseEntity{
         default: () => 'CURRENT_TIMESTAMP',
     })
     created_at: Date;
+
+
+    @Column('bool', {  //Este estatus nos ayudara a saber si esta activo o eliminado muestra  
+        default: true,
+    })
+    status: boolean; 
 }
 
 

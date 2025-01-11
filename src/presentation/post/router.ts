@@ -17,6 +17,12 @@ export class PostRoutes {
 
         router.post('/', postController.createPost); // el post es para crear y llamamos al metodo createPost
 
+        router.get('/:id', postController.findOnePost)  //para resibir una cosas en especifico
+
+        router.patch('/:id', postController.updatePost)  //para actualizar patch necesita :id
+
+        router.delete('/:id', postController.deletePost)
+
         return router;
     }
 }

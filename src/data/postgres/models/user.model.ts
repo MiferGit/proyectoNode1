@@ -43,6 +43,12 @@ export class User extends BaseEntity { //Colocamos todos los atributos que gener
 
     @Column('varchar')
     photo: string;
+
+    
+    @Column('bool', {     //Este estatus nos ayudara a saber si esta activo o eliminado
+        default: true,
+    })
+    status: boolean;
 } 
 
 
